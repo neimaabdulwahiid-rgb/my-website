@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Makes the layout adapt to mobile and desktop screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Discover SkyNest Co-Living Spaces, providing flexible short-term and long-term accommodation in Singapore for young professionals, digital nomads, and international students.">
+
+  <title>SkyNest Co-Living Spaces | Home</title>
+
+  <!-- All CSS for this page is embedded here -->
+  <style>
+    /* Include padding and borders within element widths */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #243447;
+      background-color: #f5f7fa;
+    }
+
+    /* Shared width for page sections */
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Accessible link for keyboard users */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 12px;
+      padding: 10px;
+      background-color: #ffffff;
+      color: #123047;
+      z-index: 10;
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #c65a00;
+      outline-offset: 4px;
+    }
+
+    /* Header and website name */
+    header {
+      background-color: #123047;
+      color: #ffffff;
+      padding: 24px 0;
+      text-align: center;
+    }
+
+    .site-name {
+      margin: 0;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .tagline {
+      margin: 5px 0 0;
+      color: #e1edf5;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #1d465f;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      list-style: none;
+      margin: 0;
+      padding: 12px 0;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 10px 16px;
+      border-radius: 5px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      background-color: #ffffff;
+      color: #123047;
+    }
+
+    /* Main welcome section */
+    .hero {
+      padding: 48px 0;
+      background-color: #e8f1f5;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #23566a;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: 38px;
+      line-height: 1.2;
+      color: #123047;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #123047;
+      font-size: 28px;
+      line-height: 1.3;
+    }
+
+    h3 {
+      margin-top: 0;
+      color: #123047;
+    }
+
+    /* Buttons are links styled with CSS */
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 22px;
+      border-radius: 6px;
+      background-color: #146477;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background-color: #0e4b59;
+    }
+
+    /* Image styling */
+    figure {
+      margin: 0;
+    }
+
+    .page-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    figcaption {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #4c5d6b;
+    }
+
+    /* Main content sections */
+    .section {
+      padding: 48px 0;
+    }
+
+    .section-intro {
+      max-width: 750px;
+      margin-bottom: 24px;
+    }
+
+    /* Three benefit cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      padding: 24px;
+      background-color: #ffffff;
+      border: 1px solid #d8e2e8;
+      border-radius: 10px;
+    }
+
+    .card p {
+      margin-bottom: 0;
+    }
+
+    /* Bedroom and accommodation overview */
+    .accommodation {
+      background-color: #ffffff;
+    }
+
+    .accommodation-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .option-list {
+      padding-left: 22px;
+    }
+
+    .option-list li {
+      margin-bottom: 12px;
+    }
+
+    /* Final enquiry section */
+    .enquiry {
+      padding: 38px 24px;
+      background-color: #e8f1f5;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .enquiry p {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Footer */
+    footer {
+      padding: 26px 0;
+      background-color: #123047;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    .footer-note {
+      font-size: 14px;
+      color: #e1edf5;
+    }
+
+    /* Stack columns on tablets and mobile phones */
+    @media (max-width: 768px) {
+      .hero-layout,
+      .accommodation-layout,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .site-name {
+        font-size: 26px;
+      }
+
+      .hero,
+      .section {
+        padding: 32px 0;
+      }
+
+      .nav-links a {
+        padding: 10px 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Website header -->
+  <header>
+    <div class="container">
+      <p class="site-name">SkyNest Co-Living Spaces</p>
+      <p class="tagline">Flexible living, remote working, and community in Singapore</p>
+    </div>
+  </header>
+
+  <!-- The same navigation will appear on all five pages -->
+  <nav aria-label="Main navigation">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="facilities.html">Facilities</a></li>
+        <li><a href="packages.html">Packages &amp; Advice</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- Welcome section and first image -->
+    <section class="hero">
+      <div class="container hero-layout">
+
+        <div>
+          <p class="eyebrow">Welcome to SkyNest Co-Living Spaces</p>
+
+          <h1>Modern living built for work, study, and connection.</h1>
+
+          <p>
+            Relocating to Singapore as a young professional, digital nomad,
+            or international student? SkyNest provides flexible short-term
+            and long-term accommodation with fully furnished rooms and
+            inspiring shared spaces.
+          </p>
+
+          <p>
+            Explore our accommodation packages and building facilities to
+            find a stay tailored to your lifestyle.
+          </p>
+
+          <a class="button" href="about.html">Discover SkyNest</a>
+        </div>
+
+        <figure>
+          <img
+            src="images/building.jpg"
+            alt="Modern residential co-living building exterior in Singapore"
+            class="page-image"
+          >
+          <figcaption>
+            SkyNest Co-Living Spaces — modern urban living in Singapore.
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- Benefits & Facilities highlights section -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-intro">
+          <h2>Everything you need under one roof</h2>
+          <p>
+            Designed for modern remote work and hassle-free living, our
+            spaces combine private comfort with vibrant shared amenities.
+          </p>
+        </div>
+
+        <div class="cards">
+
+          <article class="card">
+            <h3>Move-in ready comfort</h3>
+            <p>
+              Enjoy fully furnished private rooms with utilities, laundry
+              rooms, and 24/7 key-card security included so you can settle
+              in right away.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Work and study productively</h3>
+            <p>
+              Stay connected with building-wide high-speed Wi-Fi, shared
+              co-working spaces, and quiet study pods tailored for remote
+              professionals and students.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Wellness and community</h3>
+            <p>
+              Unwind in our rooftop garden, gym and yoga studio, or communal
+              kitchens, and connect with fellow residents at weekly community
+              events.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Second image and accommodation packages overview -->
+    <section class="section accommodation">
+      <div class="container accommodation-layout">
+
+        <figure>
+          <img
+            src="images/bedroom.jpg"
+            alt="Fully furnished private bedroom and workspace at SkyNest"
+            class="page-image"
+            loading="lazy"
+          >
+          <figcaption>
+            Fully furnished private living spaces designed for comfort and focus.
+          </figcaption>
+        </figure>
+
+        <div>
+          <h2>Flexible packages to suit your stay</h2>
+
+          <p>
+            Whether you are visiting Singapore for a few weeks or settling in
+            for the long term, choose a package that fits your schedule:
+          </p>
+
+          <ul class="option-list">
+            <li>
+              <strong>Premium Stay:</strong>
+              Private studio apartment with weekly cleaning, utilities,
+              high-speed internet, access to all facilities, and a monthly
+              community events pass.
+            </li>
+
+            <li>
+              <strong>Standard Stay:</strong>
+              Private bedroom in a shared apartment with fortnightly cleaning,
+              utilities, co-working access, and a shared kitchen and lounge.
+            </li>
+
+            <li>
+              <strong>Short-Term Stay:</strong>
+              Flexible 1–4 week bookings in a furnished room with utilities
+              included and limited access to shared facilities.
+            </li>
+
+            <li>
+              <strong>Custom Packages:</strong>
+              Tailored options for corporate bookings, long-term stays, or
+              residents with specific accessibility needs.
+            </li>
+          </ul>
+
+          <a class="button" href="packages.html">Explore Packages &amp; Advice</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Enquiry section -->
+    <section class="section">
+      <div class="container">
+        <div class="enquiry">
+
+          <h2>Need help choosing a package or arranging a custom stay?</h2>
+
+          <p>
+            Contact our team for further information, guidance on selecting the
+            right package, or to discuss corporate bookings and individual
+            accessibility requirements.
+          </p>
+
+          <a class="button" href="contact.html">Contact SkyNest</a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p><strong>SkyNest Co-Living Spaces</strong> | Singapore</p>
+      <p class="footer-note">
+        Flexible short-term and long-term co-living accommodation.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
